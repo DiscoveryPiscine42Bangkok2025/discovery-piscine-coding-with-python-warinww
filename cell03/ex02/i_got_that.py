@@ -1,3 +1,3 @@
-inp = input(" What you gotta say? : ")
+inp = input("What you gotta say? : ")
 while (inp != "STOP"):
-    inp = input(" I got that! Anything else? : ")
+    inp = input("I got that! Anything else? : ")
