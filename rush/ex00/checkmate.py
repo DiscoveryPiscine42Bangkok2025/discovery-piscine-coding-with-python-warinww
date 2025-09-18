@@ -15,6 +15,7 @@ def checkmate(board):
     board = board.split("\n")
     size = len(board)
     col = [len(board[i]) for i in range(size)]
+    check_piece = False
 
     for i in col:
         if i != size:
@@ -43,9 +44,15 @@ def checkmate(board):
                 R_ls.append([i, j])
             elif board[i][j] == "Q":
                 Q_ls.append([i, j])
+            elif board[i][j] != ".":
+                check_piece = True
 
     if K is None:
         print("Error, don't have K in game.")
+        return
+    
+    if check_piece:
+        print("Error, piece undefined.")
         return
 
     P_result = check_dir(P_ls, dir[0], size, K, board, p = True)
